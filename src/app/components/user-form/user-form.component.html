@@ -1,0 +1,39 @@
+<!--if cookie is enabled then set data to cookies-->
+
+<div>
+    <p style="text-align: center;" class="mt-2">Iscookie Enabled : {{isCookieEnabled}}</p>
+</div>
+
+<div *ngIf="isCookieEnabled" class="parent-div mt-3 mb-3">
+    <div class="child-div">
+      <form [formGroup]="login">
+        <fieldset>
+            <legend style="text-align: center;">Login-Form </legend>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">First Name</label>
+          <input type="text" formControlName="fname" class="form-control"  aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Name</label>
+          <input type="text" formControlName="lname" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">D.O.B</label>
+            <input type="date" [max]="maxDate" formControlName="dob" class="form-control" aria-describedby="emailHelp">
+          </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="text-center">
+          <button [disabled]="login.invalid"  type="button" (click)="setCookie()" class="btn btn-danger">Set Cookie</button>
+        </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>

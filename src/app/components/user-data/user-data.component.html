@@ -1,0 +1,37 @@
+<div class="back-btn-div mt-3">
+    <button (click)="goBack()" class="btn btn-success me-5">Go Back</button>
+</div>
+
+<div *ngIf="fname" class="main-div mt-3">
+    <div class="table-div">
+        <table id="customers">
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>D.O.B</th>
+            </tr>
+            <tr>
+                <td>{{fname}}</td>
+                <td>{{lname}}</td>
+                <td>{{email}}</td>
+                <td>{{dob}}</td>
+            </tr>
+          </table>
+    </div>
+</div>
+
+<div class="mt-3">
+    <p style="text-align: center;" class="mt-2">Language of Browser : {{browserLanguage}}</p>
+    <p style="text-align: center;" class="mt-2">Browser Working Online : {{isOnline}}</p>
+    <p style="text-align: center;" class="mt-2">Number of logical processor cores : {{processorCores}}</p>
+    <p style="text-align: center;" class="mt-2">Browser User Agent : {{userAgent}}</p>
+    <p style="text-align: center;" class="mt-2">latitude : {{latitude}}</p>
+    <p style="text-align: center;" class="mt-2">longitude : {{longitude}}</p>
+</div>
+
+<div>
+    <p style="text-align: center;"><button (click) = "shareUrl()"  class="btn btn-success">Share Current Url</button></p>
+    <p style="text-align: center;"><button (click) = "shareFile()"  class="btn btn-success">Share File</button></p>
+</div>
+
